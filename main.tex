@@ -1,0 +1,55 @@
+\documentclass{ctexbook}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref, bookmark}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\ctexset{
+    % chapter = {
+    %     number = \arabic{chapter},
+    % },
+    section = {
+        name = {\S,.},
+        number = \arabic{section},
+    },
+    subsection = {
+        name = {},
+        number = {},
+        aftername = {},
+    },
+}
+
+\newcommand{\problem}[1]{\subsection{第 {#1} 题}}
+% 使公式编号与小节关联
+\numberwithin{equation}{section}
+% \makeatletter
+% \@addtoreset{equation}{section}
+% \makeatother
+
+\newcommand{\abdet}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+\newtheorem{lemma}{引理}[section]
+
+\newcommand{\abref}[1]{式 \eqref{#1}}
+\newcommand{\lemmaref}[1]{引理 \ref{#1}}
+
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+
+\title{《数学分析》（卓里奇）习题}
+\author{Abreto Fu\thanks{Email: abreto [AT] std.uestc.edu.cn}}
+
+\begin{document}
+
+\pdfbookmark[chapter]{标题页}{title}
+\maketitle
+
+\cleardoublepage
+\pdfbookmark[chapter]{\contentsname}{toc}
+\tableofcontents
+
+\input{chap/ch01.tex}
+
+\end{document}
